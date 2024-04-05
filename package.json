@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "start:ssr": "tsx src/ssr/ssr.tsx",
-    "start:api": "tsx src/api/api.ts",
+    "start:all": "concurrently \"npm run start:ssr\" \"npm run start:api\"",
+    "start:ssr": "tsx --watch src/ssr/ssr.tsx",
+    "start:api": "tsx --watch src/api/api.ts",
     "lint": "next lint",
     "test": "vitest",
     "typecheck": "clear; tsc"
@@ -30,6 +31,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "concurrently": "^8.2.2",
     "jsdom": "^21.1.0",
     "tsx": "^4.7.2",
     "vitest": "^0.29.2"

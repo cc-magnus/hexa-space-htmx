@@ -13,7 +13,6 @@ app.get('/', (context) => {
     return context.html(<IndexPage/>)
 })
 
-
 app.get('/ships', async (context) => {
     const ships = await getSpaceShips();
     const claps = await getClaps();
