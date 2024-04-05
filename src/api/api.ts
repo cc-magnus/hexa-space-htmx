@@ -2,8 +2,11 @@ import {Hono} from 'hono';
 import {serve} from '@hono/node-server';
 import ships from "@db/ships.json";
 import {getClaps, incClapsForId} from "@/api/claps-store";
+import { cors } from 'hono/cors'
 
 const app = new Hono()
+
+app.use('/api/*', cors())
 
 app.get('/api/inYard', (context) => {
     return context.json(ships.inYard)
