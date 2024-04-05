@@ -1,7 +1,7 @@
 import {Hono} from 'hono';
 import {serve} from '@hono/node-server';
 import ships from "@db/ships.json";
-import {getClaps} from "@/api/claps-store";
+import {getClaps, incClapsForId} from "@/api/claps-store";
 
 const app = new Hono()
 
@@ -15,6 +15,11 @@ app.get('/api/catalogue', (context) => {
 
 app.get('/api/claps', async (context) => {
     return context.json(await getClaps())
+})
+
+app.post('/api/incClapsForId', async (context) => {
+    const body = await context.req.json()
+    return context.json({ claps: await incClapsForId(body.id)})
 })
 
 console.log("Listening on http://localhost:8080")
