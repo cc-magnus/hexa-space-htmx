@@ -1,14 +1,9 @@
 import '@testing-library/jest-dom/extend-expect'
 import {describe, expect, it, vi} from "vitest";
-import {html} from 'hono/html'
-import {testClient} from 'hono/testing';
-
 import {SpaceShip} from '../domain/space-ship';
 import {ShipComponentHTMX} from './ship-component.htmx';
 import {getByTestId, queryByTestId} from '@testing-library/dom';
-import {Hono} from 'hono';
 import {render} from '../../../test-utils/render';
-import {ShipComponent} from './ship-component';
 import {act, fireEvent} from '@testing-library/react';
 
 const spaceShipWorth50000: SpaceShip = {
@@ -22,7 +17,7 @@ const spaceShipWorth50000: SpaceShip = {
     constructionYear: 3451,
 };
 
-const aSpaceShip: SpaceShip = {
+const spaceShip: SpaceShip = {
     id: "27",
     name: "XV-1 Turbo Alpha",
     price: 10000,
@@ -76,12 +71,12 @@ describe('Ship', () => {
 
 describe('Monthly Rates', () => {
     it.fails('defaults to 12', async () => {
-        const container = await render(<ShipComponentHTMX ship={aSpaceShip}/>);
+        const container = await render(<ShipComponentHTMX ship={spaceShip}/>);
         expect(queryByTestId(container, "number-of-rates")).toHaveValue("12")
     });
 
     it('can be changed', async () => {
-        const container = await render(<ShipComponentHTMX ship={aSpaceShip}/>);
+        const container = await render(<ShipComponentHTMX ship={spaceShip}/>);
         const rateSlider = getByTestId(container, "number-of-rates")
         fireEvent.change(rateSlider, {target: {value: 8}});
         expect(rateSlider).toHaveValue("8")
