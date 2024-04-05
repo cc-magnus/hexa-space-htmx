@@ -12,4 +12,6 @@ app.get('/api/catalogue', (context)=>{
     return context.json(ships.catalogue)
 })
 
+console.log("Listening on http://localhost:8080")
+
 serve({fetch: app.fetch, port: 8080})
