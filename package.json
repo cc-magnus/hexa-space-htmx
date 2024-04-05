@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start:ssr": "tsx src/ssr/ssr.ts",
     "start:api": "tsx src/api/api.ts",
     "lint": "next lint",
     "test": "vitest",
