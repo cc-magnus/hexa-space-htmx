@@ -17,6 +17,7 @@ app.get('/ships', async (context) => {
     const ships = await getSpaceShips();
     const claps = await getClaps();
     const shipsWithClaps = attachClapsToShips({claps, ships});
+
     return context.html(<ShipsPage shipsWithClaps={shipsWithClaps}/>)
 })
 
