@@ -40,3 +40,8 @@ next-env.d.ts
 /hexa-space.iml
 
 clap-store.json
+
+.parcel-cache/
+
+public/index.js
+public/index.js.map
