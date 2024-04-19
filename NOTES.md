@@ -15,4 +15,9 @@
 
 ## Current Challenge
 
-* client side JS without breaking the Hexagon? 
+* client side JS without breaking the Hexagon?
+    * AlpineJS magic (yes it is really called magic https://alpinejs.dev/advanced/extending#custom-magics) for client JS
+    * currently bundleing our domain function and intialization function Alpine magic in ts file with parcel
+    * Open Topic
+        * Is that our wiring because we need magic alpine wrappers?
+    
