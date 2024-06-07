@@ -20,4 +20,5 @@
     * currently bundleing our domain function and intialization function Alpine magic in ts file with parcel
     * Open Topic
         * Is that our wiring because we need magic alpine wrappers?
-    
+        * how to unit test AlpineJS components => do E2E test
+
