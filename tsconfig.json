@@ -1,8 +1,17 @@
 {
   "compilerOptions": {
-    "types": ["vitest/importMeta", "node", "jest", "@testing-library/jest-dom"],
+    "types": [
+      "vitest/importMeta",
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,16 +26,22 @@
     "jsxImportSource": "hono/jsx",
     "incremental": true,
     "plugins": [
-      {
-        "name": "next"
-      }
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@db/*": ["./db/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@db/*": [
+        "./db/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
