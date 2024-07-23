@@ -45,3 +45,7 @@ clap-store.json
 
 public/index.js
 public/index.js.map
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
